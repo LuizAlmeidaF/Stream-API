@@ -3,6 +3,7 @@ package functional_interface;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+//import java.util.function.Predicate;
 
 public class ConsumerExemple {
     static void main() {
@@ -17,12 +18,9 @@ public class ConsumerExemple {
         };
 
         //Usar o consumer para imprimir os numeros pares no stream
-        numeros.forEach(n -> {
-                if (n % 2 == 0) {
-                    System.out.println(n);
-                }
-            }
-        );
+        numeros.stream()
+                .filter( n ->  n % 2 == 0)
+                .forEach(System.out::println);
 
     }
 }
